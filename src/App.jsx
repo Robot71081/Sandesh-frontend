@@ -12,7 +12,7 @@ import { SocketProvider } from './socket.jsx'
 
 
 
-const Home=lazy(()=>import("./pages/home.jsx"))
+const Home=lazy(()=>import("./pages/Home.jsx"))
 const Login=lazy(()=>import("./pages/Login.jsx"))
 const Chat=lazy(()=>import("./pages/Chat.jsx"))
 const Groups=lazy(()=>import("./pages/Groups.jsx"))
