@@ -26,7 +26,7 @@ const App = () => {
   const dispatch =useDispatch()
    useEffect(() => {
       //console.log(server)
-        axios.get(`http://localhost:3000/api/v1/user/me`,{withCredentials:true})
+        axios.get(`https://sandesh-backend-4ql2.onrender.com/api/v1/user/me`,{withCredentials:true})
             .then(({data}) => dispatch(userExists(data.user)))
             .catch((err) =>dispatch(userNotExists()));
     }, []);

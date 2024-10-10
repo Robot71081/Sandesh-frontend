@@ -33,7 +33,7 @@ const handleLogin= async (e)=>{
     
   }
 try {
-  const {data}=await axios.post(`http://localhost:3000/api/v1/user/login`,{
+  const {data}=await axios.post(`https://sandesh-backend-4ql2.onrender.com/api/v1/user/login`,{
     username:username.value,
     password:password.value
   },config)
@@ -69,7 +69,7 @@ const handleSignup= async (e)=>{
   }
 
   try {
-    const {data}=await axios.post(`http://localhost:3000/api/v1/user/new`,formData,config)
+    const {data}=await axios.post(`https://sandesh-backend-4ql2.onrender.com/api/v1/user/new`,formData,config)
   
     dispatch(userExists(data.user))
     toast.success(data.message,{id:toastId})
