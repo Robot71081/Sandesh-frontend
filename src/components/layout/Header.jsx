@@ -67,7 +67,7 @@ const Header = () => {
     
   return (
     <>
-    <div className='flex flex-row items-center bg-blue-400 h-screen w-full font-bold text-white text-4xl container mx-auto'>
+    <div className='flex flex-row items-center bg-blue-400 h-11 w-full font-bold text-white text-4xl container mx-auto'>
   <div className='flex-1'>Sandesh</div>
   
   <div className='flex flex-row items-center'>
