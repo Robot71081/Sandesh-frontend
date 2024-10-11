@@ -54,7 +54,7 @@ const Header = () => {
 
     const logoutHandler=async ()=>{
        try {
-         const {data} = await axios.get(`http://localhost:3000/api/v1/user/logout`,{withCredentials:true})
+         const {data} = await axios.get(`https://sandesh-backend-4ql2.onrender.com/api/v1/user/logout`,{withCredentials:true})
          dispatch(userNotExists())
          toast.success(data.message)
 
@@ -67,7 +67,7 @@ const Header = () => {
     
   return (
     <>
-    <div className='flex flex-row items-center bg-blue-400 h-11 font-bold text-white text-4xl container mx-auto'>
+    <div className='flex flex-row items-center bg-blue-400 h-screen w-full font-bold text-white text-4xl container mx-auto'>
   <div className='flex-1'>Sandesh</div>
   
   <div className='flex flex-row items-center'>
