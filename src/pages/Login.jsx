@@ -14,8 +14,8 @@ const Login = () => {
     const toggleLogin=()=>{setLogin((prev)=>!prev)}
     const  name=useInputValidation("")
     const  bio=useInputValidation("")
-    const  username=useInputValidation("",usernameValidator)
-    const  password=useStrongPassword()
+    const  username=useInputValidation("Guest",usernameValidator)
+    const  password=useStrongPassword("Guest@1234")
 
     const avatar=useFileHandler("single")
     const dispatch=useDispatch()
@@ -116,6 +116,7 @@ const handleSignup= async (e)=>{
             <div className="relative ">
               <button type="submit"className="bg-cyan-500 text-white rounded-md px-2 py-1 " disabled={isLoading}>Submit</button>
             </div>
+          
 
             <div className='text-center font-semibold '>OR</div>
             <div className="relative   ">
