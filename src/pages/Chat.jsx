@@ -147,41 +147,40 @@ const Chat = ({chatId,user}) => {
   
   return chatDetails.isLoading?(<div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>):(
     <>
-    {/* Chat Container */}
-    <div className="flex flex-col space-y-4 p-4 bg-gray-100 overflow-auto flex-1" ref={containerRef}>
-      {
-        allMessages.map((i) => (
-          <MessageComponent key={i._id} message={i} user={user} />
-        ))
-      }
-      {userTyping && <TypingLoader />}
-      <div ref={bottomRef} />
+    <div className="flex flex-col space-y-4 p-4 bg-gray-100 h-[90%] overflow-auto" ref={containerRef}>
+   
+    {
+      allMessages.map((i)=>(
+        <MessageComponent key={i._id} message={i} user={user} />
+      ))
+    }
+    {userTyping && <TypingLoader/>}
+    <div ref={bottomRef}/>
     </div>
+   
+    <form className='h-[10%]' onSubmit={submitHandler}>
+  <div className="flex flex-row items-center space-x-2 p-4 h-full">
+    <button onClick={handleFileOpen}  type="submit" className="flex items-center justify-center relative bg-blue-500 rounded-lg p-[0.5rem] hover:bg-blue-800  text-white">
     
-    {/* Input Form */}
-    <form className="h-auto sm:h-[10%] lg:h-[12%] flex flex-row items-center space-x-2 p-4 bg-gray-200" onSubmit={submitHandler}>
-      <button onClick={handleFileOpen} type="submit" className="flex items-center justify-center relative bg-blue-500 rounded-lg p-[0.5rem] hover:bg-blue-800 text-white">
-        <MdAttachFile />
-      </button>
-  
-      <input
-        type="text"
-        placeholder="Enter message here"
-        className="flex-grow h-full border-none outline-none p-2 rounded-3xl bg-gray-100"
-        value={message}
-        onChange={msgOnChange}
-      />
-  
-      <button type="submit" className="flex items-center justify-center bg-blue-500 rounded-lg p-[0.5rem] hover:bg-blue-800 text-white">
-        <MdSend />
-      </button>
-    </form>
-  
-    {/* File Menu */}
-    {isFileMenu && <FileMenu anchorEl={fileMenuAnchor} chatId={chatId} />}
-  </>
-  
-  
+      <MdAttachFile />
+    </button>
+
+    <input
+      type="text"
+      placeholder="Enter message here"
+      className='flex-grow h-full border-none outline-none p-2 rounded-3xl bg-gray-100'
+      value={message}
+      onChange={msgOnChange}
+    />
+
+    <button type="submit" className="flex items-center justify-center bg-blue-500 rounded-lg p-[0.5rem] hover:bg-blue-800  text-white">
+      <MdSend  />
+    </button>
+  </div>
+</form>
+{isFileMenu &&<FileMenu anchorEl={fileMenuAnchor} chatId={chatId} />}
+
+    </>
   )
 }
 
