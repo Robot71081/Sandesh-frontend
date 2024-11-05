@@ -147,7 +147,7 @@ const Chat = ({chatId,user}) => {
   
   return chatDetails.isLoading?(<div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>):(
     <>
-    <div className="flex flex-col space-y-4 p-4 bg-gray-100 h-[90%] overflow-auto" ref={containerRef}>
+    <div className="flex flex-col space-y-4 p-4 bg-gray-100 h-[85%] overflow-auto" ref={containerRef}>
    
     {
       allMessages.map((i)=>(
