@@ -15,7 +15,7 @@ const Login = () => {
     const  name=useInputValidation("")
     const  bio=useInputValidation("")
     const  username=useInputValidation("Guest",usernameValidator)
-    const  password=useStrongPassword("Guest@1234")
+    const  password=useInputValidation("Guest@1234",usernameValidator)
 
     const avatar=useFileHandler("single")
     const dispatch=useDispatch()
